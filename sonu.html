@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      const localLang = localStorage.getItem("local");
+      const language = (key, local) => {
+        const sentences = {
+          hello: {
+            en: "Hello",
+            fr: "bonjour",
+          },
+          how: {
+            en: "how are you",
+            fr: "mai thik hu",
+          },
+        };
+        return sentences[key][local] || "";
+      };
+    </script>
+    <div
+      id="empName"
+      class="empClass"
+      style="border: 1px solid red; height: 100px"
+    >
+      <script>
+        document.write(language("hello", localLang));
+      </script>
+    </div>
+    <div
+      id="empName"
+      class="empClass"
+      style="border: 1px solid red; height: 100px"
+    >
+      <script>
+        document.write(language("how", localLang));
+      </script>
+    </div>
+  </body>
+</html>
+
+<script>
+  localStorage.setItem("local", "fr");
+</script>
+
+<textarea
+  placeholder="sonu"
+  maxlength="5000"
+  id="Event-details-2"
+  name="Event-details"
+  data-name="Event-details"
+  class="text-field-input form_field w-input"
+></textarea>
+<script>
+  const a = document.getElementById("Event-details-2");
+  a.placeholder = "cmkf";
+</script>
